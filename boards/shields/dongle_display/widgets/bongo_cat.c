@@ -85,11 +85,6 @@ typedef enum {
 
 static anim_state_t current_anim_state = anim_state_idle;
 
-struct zmk_widget_bongo_cat {
-    sys_snode_t node;
-    lv_obj_t *obj;
-};
-
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
 /* ── Widget init & obj getter ───────────────────────────────── */
