@@ -35,7 +35,7 @@ static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 int zmk_widget_bongo_cat_init(struct zmk_widget_bongo_cat *widget, lv_obj_t *parent) {
     widget->obj = lv_img_create(parent);   /* plain lv_img, not animimg */
     lv_img_set_src(widget->obj, animal_static_frames[current_animal]);
-    lv_obj_set_size(widget->obj, 50, 26);
+    lv_obj_set_size(widget->obj, 50, 50);
 
     sys_slist_append(&widgets, &widget->node);
     return 0;
