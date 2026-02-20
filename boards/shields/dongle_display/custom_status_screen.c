@@ -21,6 +21,10 @@ static struct zmk_widget_dongle_battery_status dongle_battery_status_widget;
 static struct zmk_widget_bongo_cat bongo_cat_widget;
 #endif
 
+/* ── Expose to bongo_cat.c for hide/show ─────────────────────── */
+lv_obj_t *g_output_status_obj  = NULL;
+lv_obj_t *g_battery_status_obj = NULL;
+
 lv_style_t global_style;
 
 lv_obj_t *zmk_display_status_screen() {
@@ -33,21 +37,23 @@ lv_obj_t *zmk_display_status_screen() {
     lv_style_set_text_line_space(&global_style, 1);
     lv_obj_add_style(screen, &global_style, LV_PART_MAIN);
 
-    /* ── Left column: output status, top ── */
+    /* ── Output status — top left ── */
     zmk_widget_output_status_init(&output_status_widget, screen);
     lv_obj_align(zmk_widget_output_status_obj(&output_status_widget),
                  LV_ALIGN_TOP_LEFT, 0, 0);
+    g_output_status_obj = zmk_widget_output_status_obj(&output_status_widget);
 
 #if IS_ENABLED(CONFIG_ZMK_BATTERY)
-    /* ── Left column: battery, below output status ── */
+    /* ── Battery — below output status ── */
     zmk_widget_dongle_battery_status_init(&dongle_battery_status_widget, screen);
     lv_obj_align_to(zmk_widget_dongle_battery_status_obj(&dongle_battery_status_widget),
                     zmk_widget_output_status_obj(&output_status_widget),
                     LV_ALIGN_OUT_BOTTOM_LEFT, 0, 4);
+    g_battery_status_obj = zmk_widget_dongle_battery_status_obj(&dongle_battery_status_widget);
 #endif
 
 #if IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_BONGO_CAT)
-    /* ── Right: static animal image, centered vertically ── */
+    /* ── Image — right side ── */
     zmk_widget_bongo_cat_init(&bongo_cat_widget, screen);
     lv_obj_align(zmk_widget_bongo_cat_obj(&bongo_cat_widget),
                  LV_ALIGN_RIGHT_MID, 0, 0);
