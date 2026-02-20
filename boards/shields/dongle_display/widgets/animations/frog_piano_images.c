@@ -86,7 +86,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_FROG_PIAN
 };
 
 const lv_img_dsc_t frog_piano_left1 = {
-  .header.cf = LV_COLOR_FORMAT_I1,
+  .header.cf = LV_IMG_CF_INDEXED_1BIT,
   .header.w = 50,
   .header.h = 26,
   .data_size = 190,
