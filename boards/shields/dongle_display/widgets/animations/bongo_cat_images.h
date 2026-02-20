@@ -6,4 +6,5 @@
 #pragma once
 #include <lvgl.h>
 
-extern const lv_img_dsc_t bongo_cat_none;
+extern const lv_img_dsc_t bongo_cat_small;  /* 50×50 — side panel */
+extern const lv_img_dsc_t bongo_cat_full;   /* 128×64 — fullscreen */
