@@ -10,6 +10,7 @@ if(CONFIG_ZMK_DISPLAY AND CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM AND ((NOT CONF
         zephyr_library_sources(widgets/bongo_cat.c)
         zephyr_library_sources(widgets/animations/bongo_cat_images.c)
         zephyr_library_sources(widgets/animations/frog_piano_images.c)
+        zephyr_library_sources(widgets/animations/gradient_images.c)
     endif()
     if (CONFIG_ZMK_HID_INDICATORS)
         zephyr_library_sources(widgets/hid_indicators.c)

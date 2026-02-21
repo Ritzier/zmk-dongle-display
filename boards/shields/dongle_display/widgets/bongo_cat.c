@@ -20,6 +20,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 typedef enum {
     ANIMAL_BONGO_CAT = 0,
     ANIMAL_FROG_PIANO,
+    ANIMAL_GRADIENT,
     ANIMAL_COUNT
 } animal_type_t;
 
@@ -35,11 +36,13 @@ static display_mode_t current_mode   = MODE_NORMAL;
 static const lv_img_dsc_t *animal_small[ANIMAL_COUNT] = {
     [ANIMAL_BONGO_CAT]  = &bongo_cat_small,
     [ANIMAL_FROG_PIANO] = &frog_piano_small,
+    [ANIMAL_GRADIENT]=&gradient_small,
 };
 
 static const lv_img_dsc_t *animal_full[ANIMAL_COUNT] = {
     [ANIMAL_BONGO_CAT]  = &bongo_cat_full,
     [ANIMAL_FROG_PIANO] = &frog_piano_full,
+    [ANIMAL_GRADIENT]=&gradient_full,
 };
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
