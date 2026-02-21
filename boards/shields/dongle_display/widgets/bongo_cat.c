@@ -13,6 +13,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include "bongo_cat.h"
 #include "animations/bongo_cat_images.h"
 #include "animations/frog_piano_images.h"
+#include "animations/gradient_images.h"
 
 #define KEYCODE_F23  114   /* toggle fullscreen */
 #define KEYCODE_F24  115   /* cycle animal */
